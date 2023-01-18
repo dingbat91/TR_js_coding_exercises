@@ -7,7 +7,7 @@ import {
 	areWeCovered,
 } from "../challenges/exercise006.js";
 
-describe(sumMultiples, () => {
+describe("sumMultiples", () => {
 	test("Returns the sum of any numbers that are multiples of 3 or 5", () => {
 		const result = sumMultiples([1, 3, 5]);
 		const expected = 8;
@@ -33,7 +33,7 @@ describe(sumMultiples, () => {
 	});
 });
 
-describe(isValidDNA, () => {
+describe("isValidDNA", () => {
 	test("Should return true/false depending on whether it is a valid DNA string, C, G, T or A only.", () => {
 		const result = isValidDNA("CGTTAAAAGTGTA");
 		const expected = true;
@@ -58,7 +58,7 @@ describe(isValidDNA, () => {
 	});
 });
 
-describe(getComplementaryDNA, () => {
+describe("getComplementaryDNA", () => {
 	test("T always pairs with A, and C always pairs with G", () => {
 		const result = getComplementaryDNA("TGCA");
 		const expected = "ACGT";
@@ -76,7 +76,7 @@ describe(getComplementaryDNA, () => {
 	});
 });
 
-describe(isItPrime, () => {
+describe("isItPrime", () => {
 	test("Returns true if prime", () => {
 		const result = isItPrime(7);
 		const expected = true;
@@ -94,7 +94,7 @@ describe(isItPrime, () => {
 	});
 });
 
-describe(createMatrix, () => {
+describe("createMatrix", () => {
 	test('should  create a 3x3 matrix of "foo"', () => {
 		const result = createMatrix(3, "foo");
 		const expected = [
@@ -115,7 +115,7 @@ describe(createMatrix, () => {
 	});
 });
 
-describe(areWeCovered, () => {
+describe("areWeCovered", () => {
 	test("should return true", () => {
 		const testdata = [
 			{ name: "Sally", rota: ["Monday", "Tuesday", "Wednesday"] },
