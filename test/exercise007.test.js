@@ -166,7 +166,7 @@ describe("HextoRGB", () => {
 });
 
 describe("findWinner", () => {
-	test("Solve test", () => {
+	test("X Win", () => {
 		const board = [
 			["X", "0", "0"],
 			["0", "X", "0"],
@@ -174,6 +174,24 @@ describe("findWinner", () => {
 		];
 		const result = findWinner(board);
 		const expected = "X";
-		expect(result).toEqual(expected);
+		expect(result).toBe(expected);
+	});
+	test("O Win", () => {
+		const board = [
+			["X", "X", "0"],
+			["0", "0", "0"],
+			["X", "0", "X"],
+		];
+		const result = findWinner(board);
+		const expected = "0";
+		expect(result).toBe(expected);
+	});
+	test("Bad Board", () => {
+		const board = [
+			["X", "0", "0"],
+			["0", "X", "0"],
+			["X", "0", "0"],
+		];
+		expect(() => findWinner(board).toThrow(Error));
 	});
 });

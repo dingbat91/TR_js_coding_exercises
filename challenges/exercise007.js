@@ -159,12 +159,19 @@ export const findWinner = (board) => {
 		[4, 9, 2],
 	];
 
-	let rowMap = mSquare.map((x, i) => {
+	//counts to check for valid board (No cheating now)
+	let XCount = 0;
+	let OCount = 0;
+
+	//convert magic square - X's stay at value , 0's turn to negative, black spaces are set to 0
+	const rowMap = mSquare.map((x, i) => {
 		return x.map((y, j) => {
 			switch (board[i][j]) {
 				case "X":
+					XCount++;
 					return y;
 				case "0":
+					OCount++;
 					return Math.abs(y) * -1;
 				case null:
 					return 0;
@@ -172,8 +179,40 @@ export const findWinner = (board) => {
 		});
 	});
 
-	//mapping out columns and rows for win
-	let colMap = [];
+	if (XCount > OCount + 2 || OCount > XCount + 2) {
+		throw new Error("BOARD NOT VALID");
+	}
+
+	//mapping out columns for checking wins
+	const colMap = Array.from({ length: rowMap[0].length }, (_, i) =>
+		rowMap.map((x) => x[i])
+	);
 	//mapping out diagonals for win check
-	let diagMap = [];
+	const diagMap = [
+		rowMap.map((x, i) => x[i]),
+		rowMap.map((x, i) => x[rowMap.length - 1 - i]),
+	];
+
+	//combine all mapped boards together
+	const fullBoard = [rowMap, diagMap, colMap];
+
+	let winCheck = null;
+	//check for wins
+	fullBoard.forEach((laneboard) => {
+		laneboard.forEach((lane) => {
+			switch (true) {
+				case lane.reduce((accumulator, value) => accumulator + value, 0) === 15:
+					winCheck = "X";
+					break;
+				case lane.reduce((accumulator, value) => accumulator + value, 0) ===
+					-15:
+					winCheck = "0";
+					break;
+				default:
+					break;
+			}
+		});
+	});
+
+	return winCheck;
 };
