@@ -2,7 +2,7 @@ export function findSmallNums(nums) {
 	if (!nums) throw new Error("nums is required");
 	// Your code here
 	//filter through array
-	let smallNums = nums.filter((item) => {
+	const smallNums = nums.filter((item) => {
 		//if less than one
 		if (item < 1.0) {
 			//pass filter
@@ -22,7 +22,7 @@ export function findNamesBeginningWith(names, char) {
 	// Your code here
 
 	//filter array
-	let nameSearch = names.filter((name) => {
+	const nameSearch = names.filter((name) => {
 		//if first letter of name matches parameter return true
 		if (name.charAt(0) === char) return true;
 		//else return false
@@ -36,7 +36,7 @@ export function findVerbs(words) {
 	if (!words) throw new Error("words is required");
 	// Your code here
 	//filter list
-	let verbs = words.filter((word) => {
+	const verbs = words.filter((word) => {
 		//compare initial substring against condition
 		if (word.substring(0, 3) === "to " || word.substring(0, 3) === "To ") {
 			return true;
@@ -51,7 +51,7 @@ export function getIntegers(nums) {
 	// Your code here
 
 	//Filter array
-	let integers = nums.filter((n) => {
+	const integers = nums.filter((n) => {
 		//if an integer return the item
 		if (Number.isInteger(n)) return true;
 		//else discard
@@ -103,7 +103,7 @@ export function findSentencesContaining(sentences, str) {
 	// define array of filtered sentences
 	let includedSentences = [];
 	//define regex to filter against
-	let regex = new RegExp("(" + str + ")", "gi");
+	const regex = new RegExp("(" + str + ")", "gi");
 	//iterate through array of sentences
 	sentences.map((sentence) => {
 		//filter against regex

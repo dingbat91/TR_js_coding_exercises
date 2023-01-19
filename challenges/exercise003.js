@@ -8,7 +8,7 @@ export function getSquares(nums) {
 	//iterate through passed array of numbers
 	nums.forEach((num) => {
 		// square number into square variable and push to squared array
-		let square = num * num;
+		const square = num * num;
 		squared.push(square);
 	});
 
@@ -26,7 +26,7 @@ export function camelCaseWords(words) {
 	//iterate through words array
 	for (let i = 1; i < words.length; i++) {
 		//create camelcased word
-		let camelWord = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+		const camelWord = words[i].charAt(0).toUpperCase() + words[i].slice(1);
 		//add word to camelcased string
 		camelString += camelWord;
 	}

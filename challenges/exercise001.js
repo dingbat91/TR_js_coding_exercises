@@ -4,7 +4,7 @@ export function capitalize(word) {
 	// Add your code here!
 
 	//Creates a new string out the first letter run through the toUpperCase string method and then adds the rest of the existing string via string.slice
-	let str = word[0].toUpperCase() + word.slice(1);
+	const str = word[0].toUpperCase() + word.slice(1);
 
 	return str;
 }
@@ -14,7 +14,7 @@ export function generateInitials(firstName, lastName) {
 	if (lastName === undefined) throw new Error("lastName is required");
 	// Add your code here!
 	// Build a new string by pulling the first char and upper casing them with a full stop added in between
-	let initials = firstName[0].toUpperCase() + "." + lastName[0].toUpperCase();
+	const initials = firstName[0].toUpperCase() + "." + lastName[0].toUpperCase();
 
 	//return completed value
 	return initials;
@@ -54,15 +54,9 @@ export function getMiddleCharacter(str) {
 	if (str === undefined) throw new Error("str is required");
 	// Add your code here!
 
-	console.log("string length: " + str.length);
-	//set the half value
-	let half = str.length / 2;
-	console.log(str.length % 2);
+	const half = str.length / 2;
 	//if string is of even length
 	if (str.length % 2 === 0) {
-		//Debug Line
-		//console.log(str.substring(half - 1, half + 1));
-
 		//return a substring of the two required numbers
 		return str.substring(half - 1, half + 1);
 
@@ -76,24 +70,25 @@ export function getMiddleCharacter(str) {
 export function reverseWord(word) {
 	if (word === undefined) throw new Error("word is required");
 	// Add your code here!
+
 	//declare variable for reversed word
-	let newWord = "";
+	let revWord = "";
 
 	//iterate backwards through the string
 	for (let i = word.length - 1; i >= 0; i--) {
 		//add current character to word
-		newWord += word[i];
+		revWord += word[i];
 	}
 
 	//return output
-	return newWord;
+	return revWord;
 }
 
 export function reverseAllWords(words) {
 	if (words === undefined) throw new Error("words is required");
 	// Add your code here!
 	//define new array
-	let newWords = [];
+	let revWords = [];
 	//iterate through each word in array
 	words.forEach((word) => {
 		//repeat of reverseWords(words)
@@ -102,10 +97,10 @@ export function reverseAllWords(words) {
 			newWord += word[i];
 		}
 		//pushes new word into array.
-		newWords.push(newWord);
+		revWords.push(newWord);
 	});
 	//return output
-	return newWords;
+	return revWords;
 }
 
 export function countLinuxUsers(users) {

@@ -76,7 +76,7 @@ export const isItPrime = (n) => {
 	//if it's one, it's not prime (Math crazyness)
 	if (n === 1) return false;
 	//defines the numbers square root as a variable, at least one factor must be below sqrt if not a prime
-	let sqrtnum = Math.sqrt(n);
+	const sqrtnum = Math.sqrt(n);
 	//set prime boolean (true to begin)
 	let primeNum = true;
 	//iterate up to sqrt
@@ -106,8 +106,8 @@ export const createMatrix = (n, fill) => {
 	if (n === undefined) throw new Error("n is required");
 	if (fill === undefined) throw new Error("fill is required");
 
-	let innermatrix = new Array(n).fill(fill);
-	let matrix = new Array(n).fill(innermatrix);
+	const innermatrix = new Array(n).fill(fill);
+	const matrix = new Array(n).fill(innermatrix);
 
 	return matrix;
 };
@@ -128,7 +128,7 @@ export const areWeCovered = (staff, day) => {
 	if (staff === undefined) throw new Error("staff is required");
 	if (day === undefined) throw new Error("day is required");
 
-	let regex = new RegExp("(" + day + ")", "gi");
+	const regex = new RegExp("(" + day + ")", "gi");
 	let daycount = 0;
 	staff.map((person) => {
 		if (person.rota.some((e) => regex.test(e))) daycount++;

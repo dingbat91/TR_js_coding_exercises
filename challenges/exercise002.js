@@ -8,9 +8,10 @@ export function getFillings(sandwich) {
 export function isFromManchester(person) {
 	if (person === undefined) throw new Error("person is required");
 	// Your code here!
+
 	//if person is from Manchester return true
-	if (person.city === "Manchester" || person.city === "manchester") return true;
-	//otherwise return false
+	if (person.city.match(/manchester/gi)) return true;
+
 	return false;
 }
 
@@ -27,6 +28,7 @@ export function getBusNumbers(people) {
 		//subtract 1 bus worth of people (40)
 		people = people - 40;
 	}
+
 	//return amount of busses needed.
 	return buscount;
 }
@@ -43,7 +45,6 @@ export function countSheep(arr) {
 		if (x === "Sheep" || x === "sheep") count++;
 	});
 
-	//return counter
 	return count;
 }
 
@@ -51,8 +52,10 @@ export function hasMPostCode(person) {
 	if (person === undefined) throw new Error("person is required");
 	// Your code here!
 
-	if (person.address.city !== "Manchester") return false;
+	//if persons address isn't manchester (case insensitive regex)
+	if (!person.address.city.match(/manchester/gi)) return false;
 
+	// checks first letter of postcode
 	if (person.address.postCode.charAt(0) === "M") return true;
 
 	return false;

@@ -4,7 +4,7 @@ export const findNextNumber = (nums, n) => {
 	// Your code here!
 
 	//iterate through nums array to find index that contains n
-	let index = nums.findIndex((num) => {
+	const index = nums.findIndex((num) => {
 		return num === n;
 	});
 
@@ -98,9 +98,9 @@ export const findNeedle = (haystack, searchTerm) => {
 	if (searchTerm === undefined) throw new Error("searchTerm is required");
 	// Your code here!
 	//make regex to search for search term - case insensitivity
-	let regex = new RegExp("(" + searchTerm + ")", "gi");
+	const regex = new RegExp("(" + searchTerm + ")", "gi");
 	// split object down into an array
-	let objectarray = Object.values(haystack);
+	const objectarray = Object.values(haystack);
 	//returns true if any item in the array tests true against the regex (global, case insensitivity)
 	return objectarray.some((item) => regex.test(item));
 };
@@ -109,7 +109,7 @@ export const getWordFrequencies = (str) => {
 	if (str === undefined) throw new Error("str is required");
 	// Your code here!
 	//create empty counting object
-	var countObject = {};
+	let countObject = {};
 	//clean off punctuation with regex
 	let cleanstring = str.replace(/[^\sa-zA-Z]/g, "");
 	//split into array.
