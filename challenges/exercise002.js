@@ -1,23 +1,21 @@
 export function getFillings(sandwich) {
 	if (sandwich === undefined) throw new Error("ingredients is required");
-	// Your code here!
+
 	//outputs filling value
 	return sandwich.fillings;
 }
 
 export function isFromManchester(person) {
 	if (person === undefined) throw new Error("person is required");
-	// Your code here!
 
+	//define Regex (becaue string.include doesn't allow regex as a param)
+	const REGEX = new RegExp("manchester", "gi");
 	//if person is from Manchester return true
-	if (person.city.match(/manchester/gi)) return true;
-
-	return false;
+	return REGEX.test(person.city);
 }
 
 export function getBusNumbers(people) {
 	if (people === undefined) throw new Error("people is required");
-	// Your code here!
 
 	//define count for busses
 	let buscount = 0;
@@ -35,7 +33,6 @@ export function getBusNumbers(people) {
 
 export function countSheep(arr) {
 	if (arr === undefined) throw new Error("arr is required");
-	// Your code here!
 
 	//define sheet counter
 	let count = 0;
@@ -50,7 +47,6 @@ export function countSheep(arr) {
 
 export function hasMPostCode(person) {
 	if (person === undefined) throw new Error("person is required");
-	// Your code here!
 
 	//if persons address isn't manchester (case insensitive regex)
 	if (!person.address.city.match(/manchester/gi)) return false;

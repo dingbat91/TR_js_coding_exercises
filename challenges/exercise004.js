@@ -1,6 +1,6 @@
 export function findSmallNums(nums) {
 	if (!nums) throw new Error("nums is required");
-	// Your code here
+
 	//filter through array
 	const smallNums = nums.filter((item) => {
 		//if less than one
@@ -19,7 +19,6 @@ export function findSmallNums(nums) {
 export function findNamesBeginningWith(names, char) {
 	if (!names) throw new Error("names is required");
 	if (!char) throw new Error("char is required");
-	// Your code here
 
 	//filter array
 	const nameSearch = names.filter((name) => {
@@ -34,7 +33,7 @@ export function findNamesBeginningWith(names, char) {
 
 export function findVerbs(words) {
 	if (!words) throw new Error("words is required");
-	// Your code here
+
 	//filter list
 	const verbs = words.filter((word) => {
 		//compare initial substring against condition
@@ -48,7 +47,6 @@ export function findVerbs(words) {
 
 export function getIntegers(nums) {
 	if (!nums) throw new Error("nums is required");
-	// Your code here
 
 	//Filter array
 	const integers = nums.filter((n) => {
@@ -63,7 +61,7 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
 	if (!users) throw new Error("users is required");
-	// Your code here
+
 	//define array for cities
 	let cities = [];
 
@@ -79,7 +77,6 @@ export function getCities(users) {
 
 export function getSquareRoots(nums) {
 	if (!nums) throw new Error("nums is required");
-	// Your code here
 
 	//declate storage of root numbers
 	let roots = [];
@@ -98,7 +95,6 @@ export function getSquareRoots(nums) {
 export function findSentencesContaining(sentences, str) {
 	if (!sentences) throw new Error("sentences is required");
 	if (!str) throw new Error("str is required");
-	// Your code here
 
 	// define array of filtered sentences
 	let includedSentences = [];
@@ -119,7 +115,6 @@ export function findSentencesContaining(sentences, str) {
 
 export function getLongestSides(triangles) {
 	if (!triangles) throw new Error("triangles is required");
-	// Your code here
 
 	//define array of filtered triangles
 	let longestSides = [];

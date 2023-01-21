@@ -1,7 +1,5 @@
-// Note: Be sure to check out all the exercises corresponding .md files (in docs)! 📘 👍
 export function capitalize(word) {
 	if (word === undefined) throw new Error("word is required");
-	// Add your code here!
 
 	//Creates a new string out the first letter run through the toUpperCase string method and then adds the rest of the existing string via string.slice
 	const str = word[0].toUpperCase() + word.slice(1);
@@ -12,7 +10,7 @@ export function capitalize(word) {
 export function generateInitials(firstName, lastName) {
 	if (firstName === undefined) throw new Error("firstName is required");
 	if (lastName === undefined) throw new Error("lastName is required");
-	// Add your code here!
+
 	// Build a new string by pulling the first char and upper casing them with a full stop added in between
 	const initials = firstName[0].toUpperCase() + "." + lastName[0].toUpperCase();
 
@@ -23,15 +21,12 @@ export function generateInitials(firstName, lastName) {
 export function addVAT(originalPrice, vatRate) {
 	if (originalPrice === undefined) throw new Error("originalPrice is requied");
 	if (vatRate === undefined) throw new Error("vatRate is required");
-	// Add your code here!
+
 	// create a new total variable with the requested VAT Rate Addition
 	let total = originalPrice + originalPrice * (vatRate / 100);
 	// Lower the output down to two decimal places.
 	// This can lead to rounding errors in specific edge cases (Thanks floating point artithmetics) but in these test cases it's good enough.
 	total = +total.toFixed(2);
-
-	//console debug
-	//console.log(total);
 
 	//return value
 	return total;
@@ -40,7 +35,6 @@ export function addVAT(originalPrice, vatRate) {
 export function getSalePrice(originalPrice, reduction) {
 	if (originalPrice === undefined) throw new Error("originalPrice is required");
 	if (reduction === undefined) throw new Error("reduction is required");
-	// Add your code here!
 
 	//create a new total variable with the requested sales reduction
 	let total = originalPrice - originalPrice * (reduction / 100);
@@ -52,7 +46,6 @@ export function getSalePrice(originalPrice, reduction) {
 
 export function getMiddleCharacter(str) {
 	if (str === undefined) throw new Error("str is required");
-	// Add your code here!
 
 	const half = str.length / 2;
 	//if string is of even length
@@ -69,7 +62,6 @@ export function getMiddleCharacter(str) {
 
 export function reverseWord(word) {
 	if (word === undefined) throw new Error("word is required");
-	// Add your code here!
 
 	//declare variable for reversed word
 	let revWord = "";
@@ -86,18 +78,13 @@ export function reverseWord(word) {
 
 export function reverseAllWords(words) {
 	if (words === undefined) throw new Error("words is required");
-	// Add your code here!
+
 	//define new array
 	let revWords = [];
 	//iterate through each word in array
 	words.forEach((word) => {
-		//repeat of reverseWords(words)
-		let newWord = "";
-		for (let i = word.length - 1; i >= 0; i--) {
-			newWord += word[i];
-		}
-		//pushes new word into array.
-		revWords.push(newWord);
+		//pushes new word into array using Revword.
+		revWords.push(reverseWord(word));
 	});
 	//return output
 	return revWords;
@@ -105,27 +92,17 @@ export function reverseAllWords(words) {
 
 export function countLinuxUsers(users) {
 	if (users === undefined) throw new Error("users is required");
-	// Add your code here!
 
-	//define count variable
-	let count = 0;
-
-	//iterate through users
-	users.forEach((user) => {
-		//if user type matches string
-		if (user.type === "Linux" || user.type === "linux") {
-			//add to count
-			count += 1;
-		}
-	});
-
-	//return output
-	return count;
+	const REGEX = new RegExp("linux", "i");
+	return users.reduce(
+		(acc, user) => (REGEX.test(user.type) ? acc + 1 : acc),
+		0
+	);
 }
 
 export function getMeanScore(scores) {
 	if (scores === undefined) throw new Error("scores is required");
-	// Add your code here!
+
 	//define variable for sum
 	let total = 0;
 	//define mean variable
@@ -145,7 +122,7 @@ export function getMeanScore(scores) {
 
 export function simpleFizzBuzz(n) {
 	if (n === undefined) throw new Error("n is required");
-	// Add your code here!
+
 	let output = "";
 
 	switch (true) {

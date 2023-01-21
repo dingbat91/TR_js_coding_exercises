@@ -1,6 +1,5 @@
 export function getSquares(nums) {
 	if (nums === undefined) throw new Error("nums is required");
-	// Your code here!
 
 	//define empty array for squared numbers
 	let squared = [];
@@ -18,7 +17,6 @@ export function getSquares(nums) {
 
 export function camelCaseWords(words) {
 	if (words === undefined) throw new Error("words is required");
-	// Your code here!
 
 	// Define a string with the camelcased words (init with first word lowercased)
 	let camelString = words[0].toLowerCase();
@@ -36,7 +34,6 @@ export function camelCaseWords(words) {
 
 export function getTotalSubjects(people) {
 	if (people === undefined) throw new Error("people is required");
-	// Your code here!
 
 	//define subject count
 	let count = 0;
@@ -54,7 +51,7 @@ export function getTotalSubjects(people) {
 export function checkIngredients(menu, ingredient) {
 	if (menu === undefined) throw new Error("menu is required");
 	if (!ingredient) throw new Error("ingredient is required");
-	// Your code here!
+
 	//declare boolean for check
 	let ingredientFound = false;
 
@@ -73,7 +70,6 @@ export function checkIngredients(menu, ingredient) {
 export function duplicateNumbers(arr1, arr2) {
 	if (arr1 === undefined) throw new Error("arr1 is required");
 	if (arr2 === undefined) throw new Error("arr2 is required");
-	// Your code here!
 
 	//sort array into ascending order
 	arr1.sort();

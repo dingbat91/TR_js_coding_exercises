@@ -1,7 +1,6 @@
 export const findNextNumber = (nums, n) => {
 	if (nums === undefined) throw new Error("nums is required");
 	if (n === undefined) throw new Error("n is required");
-	// Your code here!
 
 	//iterate through nums array to find index that contains n
 	const index = nums.findIndex((num) => {
@@ -18,7 +17,6 @@ export const findNextNumber = (nums, n) => {
 
 export const count1sand0s = (str) => {
 	if (str === undefined) throw new Error("str is required");
-	// Your code here!
 
 	//declare empty counter object
 	let counter = { 1: 0, 0: 0 };
@@ -44,7 +42,6 @@ export const count1sand0s = (str) => {
 
 export const reverseNumber = (n) => {
 	if (n === undefined) throw new Error("n is required");
-	// Your code here!
 
 	//turn incoming number array into string
 	let reverse = n.toString();
@@ -58,7 +55,6 @@ export const reverseNumber = (n) => {
 
 export const sumArrays = (arrs) => {
 	if (arrs === undefined) throw new Error("arrs is required");
-	// Your code here!
 
 	//sum counter
 	let sum = 0;
@@ -78,7 +74,6 @@ export const sumArrays = (arrs) => {
 
 export const arrShift = (arr) => {
 	if (arr === undefined) throw new Error("arr is required");
-	// Your code here!
 
 	//take array for manipulation
 	let newArr = arr;
@@ -96,7 +91,7 @@ export const arrShift = (arr) => {
 export const findNeedle = (haystack, searchTerm) => {
 	if (haystack === undefined) throw new Error("haystack is required");
 	if (searchTerm === undefined) throw new Error("searchTerm is required");
-	// Your code here!
+
 	//make regex to search for search term - case insensitivity
 	const regex = new RegExp("(" + searchTerm + ")", "gi");
 	// split object down into an array
@@ -107,7 +102,7 @@ export const findNeedle = (haystack, searchTerm) => {
 
 export const getWordFrequencies = (str) => {
 	if (str === undefined) throw new Error("str is required");
-	// Your code here!
+
 	//create empty counting object
 	let countObject = {};
 	//clean off punctuation with regex
